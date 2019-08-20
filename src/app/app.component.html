@@ -1,0 +1,12 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<select class="custom-select">
+  <optgroup [attr.label]="group.group" *ngFor="let group of groups">
+    <option *ngFor="let g of group.items" 
+        [value]="g.title">
+      {{g.title}}
+    </option>
+  </optgroup>
+</select>

@@ -2,11 +2,14 @@
 <p>
   Start editing to see some magic happen :)
 </p>
-<select class="custom-select">
+<select class="custom-select" (change)="setVal($event.target.value)">
   <optgroup [attr.label]="group.group" *ngFor="let group of groups">
-    <option *ngFor="let g of group.items" 
-        [value]="g.title">
-      {{g.title}}
+    <option *ngFor="let g of group.options" 
+        [value]="g.title" click>
+      {{g.value}}
     </option>
   </optgroup>
 </select>
+<p>
+  Value selected: {{tempVal}}
+</p>
